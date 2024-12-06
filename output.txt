@@ -1,0 +1,105 @@
+Line number: 1806
+🔗 Link https://www.ohlq.com/?utm_source=braze&utm_medium=email&utm_campaign=take-a-peek-october-2024&utm_content=header-white&utm_term=home
+💡 utm_content: header-white
+💡 utm_term: home
+All other expected parameters are correct
+
+Line number: 1808
+🏞️  Image
+❌ Incorrect link src: https://appboy-images.com/appboy/communication/assets/image_assets/images/6175fe1c648181161b332f7d/original.png?1635122716 
+missing correct pre-fix braze-images.com/
+💚 Correct image border value: 0
+
+Line number: 1828
+🔎 Fragment Identifier:
+💚 liquordation ref found in file
+
+Line number: 1836
+🔎 Fragment Identifier:
+💚 cognac ref found in file
+
+Line number: 1844
+🔎 Fragment Identifier:
+💚 gameday ref found in file
+
+Line number: 1866
+🔗 Link https://www.ohlq.com/events-calendar/liquordation-sales-event?utm_source=braze&utm_medium=email&utm_campaign=take-a-peek-october-2024&utm_content=hero-image&utm_term=liquordation
+💡 utm_content: hero-image
+💡 utm_term: liquordation
+All other expected parameters are correct
+
+Line number: 1868
+🏞️  Image
+❌ Incorrect link src: appboy/communication/assets/image_assets/images/66f31330baf023006552b74b/original.jpg?1727206191 
+missing correct pre-fix braze-images.com/
+💚 Correct image border value: 0
+
+Line number: 1876
+🔗 Link https://www.ohlq.com/events-calendar/liquordation-sales-event?utm_source=braze&utm_medium=email&utm_campaign=take-a-peek-october-2024&utm_content=hero-image&utm_term=liquordation
+💡 utm_content: hero-image
+💡 utm_term: liquordation
+All other expected parameters are correct
+
+Line number: 1902
+🔗 Link https://www.ohlq.com/events-calendar/liquordation-sales-event?utm_source=braze&utm_medium=email&utm_campaign=take-a-peek-october-2024&utm_content=hero-image&utm_term=liquordation
+💡 utm_content: hero-image
+💡 utm_term: liquordation
+All other expected parameters are correct
+
+Line number: 1916
+🔗 Link https://www.ohlq.com/events-calendar/liquordation-sales-event?utm_source=braze&utm_medium=email&utm_campaign=take-a-peek-october-2024&utm_content=view-liquordation-products-button-red&utm_term=liquordation
+💡 utm_content: view-liquordation-products-button-red
+💡 utm_term: liquordation
+All other expected parameters are correct
+
+Line number: 1936
+🔗 Link https://www.ohlq.com/events-calendar?utm_source=braze&utm_medium=email&utm_campaign=take-a-peek-october-2024&utm_content=discover-more-events-button-white&utm_term=events
+💡 utm_content: discover-more-events-button-white
+💡 utm_term: events
+All other expected parameters are correct
+
+Line number: 1955
+🔗 Link https://www.ohlq.com/events-calendar?utm_source=braze&utm_medium=email&utm_campaign=take-a-peek-october-2024&utm_content=discover-more-events-button-white&utm_term=events
+💡 utm_content: discover-more-events-button-white
+💡 utm_term: events
+All other expected parameters are correct
+
+Line number: 1959
+🔗 Link https://www.ohlq.com/liquor/brandy?instockonly=true&producttype=cognac&utm_source=braze&utm_medium=email&utm_campaign=take-a-peek-october-2024&utm_content=explore-cognac-banner&utm_term=product
+💡 utm_content: explore-cognac-banner
+💡 utm_term: product
+All other expected parameters are correct
+
+Line number: 1960
+🏞️  Image
+💚 Link src formatted properly
+💚 Correct image border value: 0
+
+Line number: 1969
+🔗 Link https://www.ohlq.com/liquor/brandy?instockonly=true&producttype=cognac&utm_source=braze&utm_medium=email&utm_campaign=take-a-peek-october-2024&utm_content=explore-cognac-banner&utm_term=product
+💡 utm_content: explore-cognac-banner
+💡 utm_term: product
+All other expected parameters are correct
+
+Line number: 1973
+🏞️  Image
+💚 Link src formatted properly
+💚 Correct image border value: 0
+
+Line number: 1983
+🔗 Link https://www.ohlq.com/liquor/brandy?instockonly=true&producttype=cognac&utm_source=braze&utm_medium=email&utm_campaign=take-a-peek-october-2024&utm_content=explore-cognac-banner&utm_term=product
+💡 utm_content: explore-cognac-banner
+💡 utm_term: product
+All other expected parameters are correct
+
+Line number: 1987
+🔗 Link https://www.ohlq.com/liquor/ready-to-drink-cocktails?instockonly=true&utm_source=braze&utm_medium=email&utm_campaign=take-a-peek-october-2024&utm_content=browse-rtds-banner&utm_term=specialty-category
+💡 utm_content: browse-rtds-banner
+💡 utm_term: specialty-category
+All other expected parameters are correct
+
+Line number: 1988
+🏞️  Image
+💚 Link src formatted properly
+💚 Correct image border value: 0
+
