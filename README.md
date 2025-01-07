@@ -26,9 +26,20 @@ To install the required dependencies, you can use the following command:
 pip3 install -r requirements.txt
 
 ## Usage
-1. Place your HTML file in the same directory or provide its path.
-2. Run the script:
-   ```bash
-   python validate_html.py
 
-Check the output.txt file for the validation report.
+1. **Request API Keys and Channel ID**:  
+   Before running the script, ask @denilson in the Slack channel for the following:
+   - **Slack API Bot Token**
+   - **Slack App Token**
+   - **Channel ID** for the `ohlq_email_validator` Slack channel
+
+2. **Prepare the Slack Channel**:  
+   In the `ohlq_email_validator` Slack channel, you need to submit the following:
+   - **utm_campaign text** (e.g., marketing campaign or project identifier)
+   - **HTML file** of the email you wish to validate
+
+3. **Run the script**:  
+   Once you have the API keys and channel ID, and you've submitted the necessary information in Slack, run the script using:
+
+   ```bash
+   python3 slack_email_qa.py
