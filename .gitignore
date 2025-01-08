@@ -1,2 +1,4 @@
 .env
 .DS_Store
+full_output.txt
+error_output.txt

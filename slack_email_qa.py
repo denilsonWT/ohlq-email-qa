@@ -93,23 +93,24 @@ def check_query_params(tag,utm_campaign):
         if key not in query_params:
             full_report.append(f"❌ Missing utm parameter: {key}\n")
             error_report.append(f"❌ Missing utm parameter: {key}\n")   
-
-        elif key in ['utm_content', 'utm_term']:
-            if not query_params[key][0]:
-                full_report.append(f"❌ Empty utm parameter: {key}\n")
-                error_report.append(f"❌ Empty utm parameter: {key}\n")   
-            else:
-                full_report.append(f"💡 {key}: {query_params[key][0]}\n")
-
-        elif query_params[key][0] != value:
-            full_report.append(f" ❌ {key} value is incorrect. Expected '{value}', but got '{value}'\n")
-            error_report.append(f" ❌ {key} value is incorrect. Expected '{value}', but got '{value}'\n")  
+        else:
+            param_given_value = query_params[key][0]
         
-        elif query_params[key][0] == value:
-            full_report.append(f"💚 {key}: {query_params[key][0]}\n")
+            if key in ['utm_content', 'utm_term']:
+                if not param_given_value:
+                    full_report.append(f"❌ Empty utm parameter: {key}\n")
+                    error_report.append(f"❌ Empty utm parameter: {key}\n")   
+                else:
+                    full_report.append(f"💡 {key}: {param_given_value}\n")
+            elif param_given_value != value:
+                full_report.append(f" ❌ {key} value is incorrect. Expected '{value}', but got '{param_given_value}'\n")
+                error_report.append(f" ❌ {key} value is incorrect. Expected '{value}', but got '{param_given_value}'\n")  
+            
+            elif param_given_value == value:
+                full_report.append(f"💚 {key}: {param_given_value}\n")
 
     if error_report:
-        error_report.insert(0,"Line number: {tag.sourceline}\n")
+        error_report.insert(0,f"Line number: {tag.sourceline}\n")
         error_report.insert(0,f"🔗 Link {href}\n")
         error_report.append('\n')
     full_report.append('\n')
@@ -204,7 +205,7 @@ def send_error_message(client: SocketModeClient, channel, thread_ts, error_messa
         client.web_client.chat_postMessage(
                 channel=channel,
                 text=error_message,
-                thread_ts=thread_ts,
+                thread_ts=thread_ts
             )
     except SlackApiError as e:
         print(f"Error sending message: {e.response['error']}")
@@ -273,6 +274,7 @@ def process(client: SocketModeClient, req: SocketModeRequest):
                         channel=channel,
                         message_txt=MESSAGE_TEXT_ERROR_REPORT
                     )
+
                 else:
                     send_error_message(client, channel, thread_ts, ERROR_FILE_HTTP_REQUEST + file_response.text + ERROR_NEW_REQUEST_PROMPT)       
 
