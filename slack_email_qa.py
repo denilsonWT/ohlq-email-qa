@@ -165,32 +165,6 @@ def check_html_file(file, utm_campaign):
         
 
     return ''.join(full_report_parts), ''.join(error_report_parts)
-
-def create_txt_file(content, filename="full_report.txt"):
-    # Write the content to a .txt file
-    with open(filename, "w") as file:
-        file.write(content)
-    # Step 2: Get the size of the file in bytes
-    file_size = os.path.getsize(filename)
-
-    file_url_response = web_client.files_getUploadURLExternal(
-        filename="full_report.txt",
-        length=file_size
-    )
-
-    if file_url_response['ok'] == True:
-        with open(filename, 'rb') as file:
-            files = {
-                'file': ("full_report.txt", file),
-            }
-            
-            # Send a POST request to the upload URL with the file content
-            upload_response = requests.post(file_url_response['upload_url'], files=files)
-            
-            file_upload_response = web_client.files_completeUploadExternal(
-                files=[{"id":file_url_response['file_id'], "title":"slack-test"}]
-            )
-
     
 def create_final_response(web_client: WebClient, report, file_path,thread_ts,channel, message_txt):
     with open(file_path, 'w') as file:
@@ -224,8 +198,7 @@ def create_final_response(web_client: WebClient, report, file_path,thread_ts,cha
                     print(f"Error sending message: {e.response['error']}")
             else:
                 print('Error with file API')
-    
-    
+      
 def send_error_message(client: SocketModeClient, channel, thread_ts, error_message):
     try:
         client.web_client.chat_postMessage(
