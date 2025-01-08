@@ -43,3 +43,12 @@ pip3 install -r requirements.txt
 
    ```bash
    python3 slack_email_qa.py
+
+## Results
+
+1. **Results Message**: 
+   - The bot will repsond in the same thread as the original message with the html file and utm_campaign aram
+   - The bot will generate two files, `full_output.txt` and `error_output.txt`.
+   - The **Full Report** will contain a detailed view of the HTML structure (line numbers, attributes).
+   - The **Error Report** will outline any validation issues with the HTML, with details like missing attributes or tags and broken links, along with line numbers and a breakdown of what went wrong.
+
