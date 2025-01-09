@@ -104,8 +104,8 @@ def check_query_params(tag,utm_campaign):
                 else:
                     full_report.append(f"💡 {key}: {param_given_value}\n")
             elif param_given_value != value:
-                full_report.append(f" ❌ {key} value is incorrect. Expected '{value}', but got '{param_given_value}'\n")
-                error_report.append(f" ❌ {key} value is incorrect. Expected '{value}', but got '{param_given_value}'\n")  
+                full_report.append(f"❌ {key} value is incorrect. Expected '{value}', but got '{param_given_value}'\n")
+                error_report.append(f"❌ {key} value is incorrect. Expected '{value}', but got '{param_given_value}'\n")  
             
             elif param_given_value == value:
                 full_report.append(f"💚 {key}: {param_given_value}\n")
