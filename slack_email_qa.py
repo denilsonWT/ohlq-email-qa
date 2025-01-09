@@ -22,6 +22,7 @@ FILE_PATH_REPORT_ERRORS = "error_output.txt"
 FILE_PATH_REPORT_FULL = "full_output.txt"
 MESSAGE_TEXT_FULL_REPORT = ""
 MESSAGE_TEXT_ERROR_REPORT = ""
+EMAIL_QA_AUTOMATION_CHANNEL_ID = "C0883CP5U3E"
 
 load_dotenv()
 
@@ -231,52 +232,60 @@ def process(client: SocketModeClient, req: SocketModeRequest):
         # Acknowledge the request anyway
         response = SocketModeResponse(envelope_id=req.envelope_id)
         client.send_socket_mode_response(response)
+        channel = event["channel"]
 
         # Check if it's a message event (excluding bot messages)
-        if event["type"] == "message" and "bot_id" not in event:
-            channel = event["channel"]
+        if event["type"] == "message" and "bot_id" not in event and channel == EMAIL_QA_AUTOMATION_CHANNEL_ID:
+
+            # This message is the first in the channel, not a response to a thread
             thread_ts = event.get('thread_ts', event['ts']) 
-            utm_campaign = event.get('text', '').strip()  
-            files = event.get('files', [])
+            if thread_ts == event['ts']:
+            
+                utm_campaign = event.get('text', '').strip()  
+                files = event.get('files', [])
 
-            error_flag, error_message = verify_input(utm_campaign, files)
+                error_flag, error_message = verify_input(utm_campaign, files)
 
-            if error_flag:
-                send_error_message(client, channel, thread_ts, error_message)
-            else:
-                file_url = files[0]['url_private']
-
-                headers = {
-                    "Authorization": f"Bearer {slack_api_token}"
-                }
-
-                file_response = requests.get(file_url, headers=headers)
-                
-                if file_response.status_code == 200:
-                    html_content = file_response.text
-
-                    full_report, error_report = check_html_file(html_content,utm_campaign)
-
-                    create_final_response(
-                        web_client=web_client,
-                        report=full_report,
-                        file_path=FILE_PATH_REPORT_FULL,
-                        thread_ts=thread_ts,
-                        channel=channel,
-                        message_txt=MESSAGE_TEXT_FULL_REPORT
-                    )
-
-                    create_final_response(
-                        web_client=web_client,
-                        report=error_report,
-                        file_path=FILE_PATH_REPORT_ERRORS,
-                        thread_ts=thread_ts,
-                        channel=channel,
-                        message_txt=MESSAGE_TEXT_ERROR_REPORT
-                    )
-
+                if error_flag:
+                    send_error_message(client, channel, thread_ts, error_message)
                 else:
-                    send_error_message(client, channel, thread_ts, ERROR_FILE_HTTP_REQUEST + file_response.text + ERROR_NEW_REQUEST_PROMPT)       
+                    file_url = files[0]['url_private']
+
+                    headers = {
+                        "Authorization": f"Bearer {slack_api_token}"
+                    }
+
+                    file_response = requests.get(file_url, headers=headers)
+                    
+                    if file_response.status_code == 200:
+                        html_content = file_response.text
+
+                        full_report, error_report = check_html_file(html_content,utm_campaign)
+
+                        create_final_response(
+                            web_client=web_client,
+                            report=full_report,
+                            file_path=FILE_PATH_REPORT_FULL,
+                            thread_ts=thread_ts,
+                            channel=channel,
+                            message_txt=MESSAGE_TEXT_FULL_REPORT
+                        )
+
+                        create_final_response(
+                            web_client=web_client,
+                            report=error_report,
+                            file_path=FILE_PATH_REPORT_ERRORS,
+                            thread_ts=thread_ts,
+                            channel=channel,
+                            message_txt=MESSAGE_TEXT_ERROR_REPORT
+                        )
+
+                    else:
+                        send_error_message(client, channel, thread_ts, ERROR_FILE_HTTP_REQUEST + file_response.text + ERROR_NEW_REQUEST_PROMPT)
+            else:
+                # This is a response to an existing thread
+                send_error_message(client, channel, thread_ts, ERROR_NEW_REQUEST_PROMPT)
+          
 
                          
 

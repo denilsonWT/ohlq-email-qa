@@ -2,10 +2,10 @@
 Line number: 1806
 💚 utm_source: braze
 💚 utm_medium: email
- ❌ utm_campaign value is incorrect. Expected 'take-a-peek-october-2023', but got 'take-a-peek-october-2024'
+❌ utm_campaign value is incorrect. Expected 'take-a-peek-october-2023', but got 'take-a-peek-october-2024'
 💡 utm_content: header-white
 💡 utm_term: home
-fdsafdasfads
+
 🏞️  Image
 Line number: 1807
 ❌ Incorrect link src: https://appboy-images.com/appboy/communication/assets/image_assets/images/6175fe1c648181161b332f7d/original.png?1635122716 
@@ -28,7 +28,7 @@ Line number: 1843
 Line number: 1865
 💚 utm_source: braze
 💚 utm_medium: email
- ❌ utm_campaign value is incorrect. Expected 'take-a-peek-october-2023', but got 'take-a-peek-october-2024'
+❌ utm_campaign value is incorrect. Expected 'take-a-peek-october-2023', but got 'take-a-peek-october-2024'
 💡 utm_content: hero-image
 💡 utm_term: liquordation
 
@@ -41,7 +41,7 @@ Line number: 1866
 Line number: 1914
 ❌ Missing utm parameter: utm_source
 💚 utm_medium: email
- ❌ utm_campaign value is incorrect. Expected 'take-a-peek-october-2023', but got 'take-a-peek-october-2024'
+❌ utm_campaign value is incorrect. Expected 'take-a-peek-october-2023', but got 'take-a-peek-october-2024'
 💡 utm_content: view-liquordation-products-button-red
 💡 utm_term: liquordation
 
@@ -49,7 +49,7 @@ Line number: 1914
 Line number: 1934
 💚 utm_source: braze
 💚 utm_medium: email
- ❌ utm_campaign value is incorrect. Expected 'take-a-peek-october-2023', but got 'take-a-peek-october-2024'
+❌ utm_campaign value is incorrect. Expected 'take-a-peek-october-2023', but got 'take-a-peek-october-2024'
 💡 utm_content: discover-more-events-button-white
 💡 utm_term: events
 
@@ -57,7 +57,7 @@ Line number: 1934
 Line number: 1957
 💚 utm_source: braze
 💚 utm_medium: email
- ❌ utm_campaign value is incorrect. Expected 'take-a-peek-october-2023', but got 'take-a-peek-october-2024'
+❌ utm_campaign value is incorrect. Expected 'take-a-peek-october-2023', but got 'take-a-peek-october-2024'
 💡 utm_content: explore-cognac-banner
 💡 utm_term: product
 
@@ -75,7 +75,7 @@ Line number: 1971
 Line number: 1985
 💚 utm_source: braze
 💚 utm_medium: email
- ❌ utm_campaign value is incorrect. Expected 'take-a-peek-october-2023', but got 'take-a-peek-october-2024'
+❌ utm_campaign value is incorrect. Expected 'take-a-peek-october-2023', but got 'take-a-peek-october-2024'
 💡 utm_content: browse-rtds-banner 
 💡 utm_term: specialty-category
 
