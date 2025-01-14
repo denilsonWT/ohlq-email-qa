@@ -17,8 +17,8 @@ COPY . .
 ENV FLASK_APP=slack_email_qa_flask.py
 ENV FLASK_ENV=production
 
-# Expose port 5000 to access the Flask app
-EXPOSE 5000
+# Expose port 8080 to access the Flask app
+EXPOSE 8080
 
 # Command to run the Flask app
 CMD ["flask", "run", "--host=0.0.0.0", "--port=5000"]
