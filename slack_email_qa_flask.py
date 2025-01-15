@@ -222,6 +222,11 @@ def slack_events():
         return "Request verification failed", 400
 
     data = request.json
+
+    if data.get("type") == "url_verification":
+        challenge = data["challenge"]
+        return jsonify({"challenge": challenge})
+    
     if "event" in data:
         event = data["event"]
         channel = event["channel"]
