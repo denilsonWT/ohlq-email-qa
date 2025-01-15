@@ -15,7 +15,7 @@ load_dotenv()
 # Slack API tokens from environment variables
 slack_api_token = os.getenv("SLACK_API_TOKEN")
 slack_app_token = os.getenv("SLACK_APP_TOKEN")
-signature_verifier = SignatureVerifier(os.getenv("SLACK_APP_TOKEN"))
+signature_verifier = SignatureVerifier(os.getenv("SIGNING_SECRET"))
 
 # Initialize Slack WebClient
 web_client = WebClient(token=slack_api_token)
