@@ -231,10 +231,10 @@ def slack_events():
         event = data["event"]
         channel = event["channel"]
 
+        thread_ts = event.get('thread_ts', event['ts']) 
         # if event["type"] == "message" and "bot_id" not in event and channel == EMAIL_QA_AUTOMATION_CHANNEL_ID:
         if event["type"] == "message" and "bot_id" not in event:
 
-            thread_ts = event.get('thread_ts', event['ts']) 
             if thread_ts == event['ts']:
                 utm_campaign = event.get('text', '').strip()  
                 files = event.get('files', [])
