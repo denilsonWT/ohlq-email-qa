@@ -273,8 +273,6 @@ def slack_events():
                     
                     else:
                         send_error_message(channel, thread_ts, ERROR_FILE_HTTP_REQUEST + file_response.text + ERROR_NEW_REQUEST_PROMPT)
-        else:
-            send_error_message(channel, thread_ts, ERROR_NEW_REQUEST_PROMPT)
 
     return jsonify({"status": "ok"})
 
